@@ -1,0 +1,15 @@
+﻿@{
+    var product = (ProductModel)ViewData["products"];
+}
+
+<div class="card" style="width : 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Name: @product.Name</h5>
+        <h5 class="card-title">Description: @product.Description</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Id: @product.Id</li>
+        <li class="list-group-item">Price: @product.Price</li>
+    </ul>
+</div>
+<a asp-controller="Products" asp-action="Index">Back to Products</a>

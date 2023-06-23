@@ -1,0 +1,31 @@
+﻿@{
+    var Product = (List<ProductModel>)ViewData["products"];
+}c
+
+<table class="table">
+
+    <thread>
+       <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+       </tr>
+    </thread>
+    <tbody>
+        @foreach (var product in Product)
+        {
+            <tr>
+                <th scope="row">@product.Id</th>
+                <th scope="row">@product.Name</th>
+                <th scope="row">@product.Description</th>
+                <th scope="row">@product.Price</th>
+
+
+
+            </tr>
+        }
+    </tbody>
+
+
+</table>
