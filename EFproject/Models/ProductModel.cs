@@ -1,8 +1,15 @@
-﻿namespace EFproject.Models
+﻿using EFproject.Validation;
+using System.ComponentModel.DataAnnotations;
+
+namespace EFproject.Models
 {
     public class ProductModel
     {
         public int Id { get; set; }
+
+        //[Required(ErrorMessage = "Please enter valid name!")]
+        [Name(ErrorMessage = "This name is not allowed!!!")]
+        //[StringLength(10)]
         public string Name { get; set; }
 
         public string Description { get; set; }

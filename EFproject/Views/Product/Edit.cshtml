@@ -1,0 +1,47 @@
+﻿@model ProductModel
+
+@{
+    var ProductV = (ProductModel)ViewData["Product"];
+}
+
+
+<form asp-action="Edit" method="post" class="form-horizontal" role="form">
+    
+    <div class="form-group">
+        <div>
+            <input type="hidden" asp-for="Id" value=@ProductV.Id/>
+        </div>
+    </div>
+
+    <div class="form-group">
+       <lable asp-for="Name"></lable>
+        <div>
+            <input asp-for="Name" value=@ProductV.Name />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <lable asp-for="Description"></lable>
+        <div>
+            <input  asp-for="Description" value=@ProductV.Description />
+        </div>
+    </div>
+    <div class="form-group">
+        <lable asp-for="Category"></lable>
+        <div>
+            <input asp-for="Category" value=@ProductV.Category />
+        </div>
+    </div>
+    <div class="form-group">
+        <lable asp-for="Price"></lable>
+        <div>
+            <input asp-for="Price" value=@ProductV.Price />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Update" />
+    </div>
+   
+</form>
+</div>

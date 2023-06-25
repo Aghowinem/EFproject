@@ -2,7 +2,7 @@
     var product = (ProductModel)ViewData["products"];
 }
 
-<div class="card" style="width : 18rem;">
+<div class="card container-fluid" style="width : 18rem;">
     <div class="card-body">
         <h5 class="card-title">Name: @product.Name</h5>
         <h5 class="card-title">Description: @product.Description</h5>
@@ -11,5 +11,8 @@
         <li class="list-group-item">Id: @product.Id</li>
         <li class="list-group-item">Price: @product.Price</li>
     </ul>
+    <br />
+
+    <button type="button" class="btn btn-primary"><a style="color:white;  text-decoration:none" href="/product/index">Back</a></button>
+    <br />
 </div>
-<a asp-controller="Products" asp-action="Index">Back to Products</a>

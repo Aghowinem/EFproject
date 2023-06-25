@@ -1,15 +1,19 @@
 ﻿@{
     var Product = (List<ProductModel>)ViewData["products"];
-}c
+}
 
 <table class="table">
 
     <thread>
        <tr>
-            <th scope="col">Id</th>
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
             <th scope="col">Price</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
        </tr>
     </thread>
     <tbody>
@@ -21,11 +25,27 @@
                 <th scope="row">@product.Description</th>
                 <th scope="row">@product.Price</th>
 
+                <th>
+                <td>
+                    <button type="button" class="btn btn-primary"><a style="color:white; text-decoration:none" href="/product/details/@product.Id">SHOW</a></button>
+                </td>
 
+                <td>
+                    <button type="button" class="btn btn-info"><a style="color:white;  text-decoration:none" href="/product/edit/@product.Id">EDIT</a></button>
+                </td>
 
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id">
+                        <input type="submit" class="btn btn-danger" value="Delete"/>
+                    </form>
+                </td>
+                </th>
             </tr>
         }
     </tbody>
 
-
+    
 </table>
+<div class="container-fluid">
+<button type="button" class="btn btn-primary"><a style="color:white;  text-decoration:none" href="/product/Add">ADD NEW ITEM</a></button>
+</div>
