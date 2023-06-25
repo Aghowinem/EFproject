@@ -40,12 +40,12 @@ namespace EFproject.Controllers
         [HttpPost]
         public IActionResult Add([Bind("Name", "Description", "Category", "Price")] ProductModel product)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _db.Products.Add(product);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
-            }
+            //}
             return View(product);
         }
         // GET: /product/edit/id
