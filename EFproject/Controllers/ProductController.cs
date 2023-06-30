@@ -20,6 +20,10 @@ namespace EFproject.Controllers
             ViewData["products"] = Products;
             return View();
         }
+        public IActionResult Products()
+        {
+            return View();
+        }
         //GET : /products/id 
         public IActionResult Details(int? id)
         {
@@ -74,8 +78,8 @@ namespace EFproject.Controllers
         [HttpPost]
         public IActionResult Delete(int? id) 
         {
-            var product = _db.Products.ToList().FirstOrDefault(p => p.Id == id);
-            _db.Products.Remove(product);
+            var Product = _db.Products.ToList().FirstOrDefault(p => p.Id == id);
+            _db.Products.Remove(Product);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

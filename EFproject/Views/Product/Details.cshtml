@@ -1,18 +1,71 @@
 ﻿@{
     var product = (ProductModel)ViewData["products"];
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EFproject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EFproject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <br />
+    <br />
+
 
 <div class="card container-fluid" style="width : 18rem;">
+    
     <div class="card-body">
-        <h5 class="card-title">Name: @product.Name</h5>
-        <h5 class="card-title">Description: @product.Description</h5>
+        <h2 class="card-title" style="text-align:center">#@product.Id</h2>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Id: @product.Id</li>
-        <li class="list-group-item">Price: @product.Price</li>
-    </ul>
-    <br />
+        <table class="table">
 
-    <button type="button" class="btn btn-primary"><a style="color:white;  text-decoration:none" href="/product/index">Back</a></button>
+            <tbody>
+              
+                <tr>
+                    <th class="row-header">Name</th>
+                    <td>
+                        @product.Name
+                    </td>
+                </tr>
+                <tr>
+                    <th class="row-header">Price</th>
+                    <td>
+                        @product.Price
+                    </td>
+                </tr>
+                <tr>
+                    <th class="row-header">Category</th>
+                    <td>
+                        @product.Category
+                    </td>
+                </tr>
+                <tr>
+                    <th class="row-header">Description</th>
+                    <td>
+                        @product.Description
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <br />
     <br />
 </div>
+    <br />
+    <div class="text-center">
+    <button type="button" class="btn btn-primary" >
+        <a style="color:white;  text-decoration:none" href="/product/index">
+            <i class="bi bi-arrow-left-short"></i>
+
+            DASHBOARD
+        </a>
+    </button>
+        </div>
+
+</body>
+</html>

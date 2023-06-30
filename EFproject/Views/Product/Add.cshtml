@@ -1,39 +1,41 @@
 ﻿@model ProductModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EFproject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EFproject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-<form asp-action="Add" method="post" class="form-horizontal" role="form">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <div>
-            <input asp-for="Name"/>   
-        </div>
-        <span asp-validation-for="Name" class="text-danger"></span>
+</head>
+
+<body>
+   
+   
+        
+    <div class="wrapper">
+                <form class="form-signin" asp-action="Add" method="post" role="form">
+                    
+                    <h2 class="form-signin-heading">Please fill the details</h2>
+                    
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Name" />
+             
+                        <input type="text" class="form-control" asp-for="Description" placeholder="Description" required="" />
+
+                        <input type="text" class="form-control" asp-for="Category" placeholder="Category" required="" />
+         
+                        <input type="text" class="form-control" asp-for="Price" placeholder="Price" required="" />
+                
+                        <br />
+
+                   <button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Submit</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label asp-for="Description"></label>
-        <div>
-            <input asp-for="Description" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Category"></label>
-        <div>
-            <input asp-for="Category" />
-
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Price"></label>
-        <div>
-            <input asp-for="Price" />
-
-        </div>
-    </div>
-
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Submit"/>
-    </div>
-</form>
+        
+    
+  
+</body>
+</html>

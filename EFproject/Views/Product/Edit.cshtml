@@ -3,45 +3,60 @@
 @{
     var ProductV = (ProductModel)ViewData["Product"];
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EFproject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EFproject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <br />
+    <br />
 
 
-<form asp-action="Edit" method="post" class="form-horizontal" role="form">
-    
-    <div class="form-group">
-        <div>
-            <input type="hidden" asp-for="Id" value=@ProductV.Id/>
-        </div>
-    </div>
+<div class="wrapper">
+    <form class="form-signin" asp-action="Edit" method="post" role="form">
 
-    <div class="form-group">
-       <lable asp-for="Name"></lable>
-        <div>
-            <input asp-for="Name" value=@ProductV.Name />
-        </div>
-    </div>
+        <h2 class="form-signin-heading">Please edit details</h2>
 
-    <div class="form-group">
-        <lable asp-for="Description"></lable>
-        <div>
-            <input  asp-for="Description" value=@ProductV.Description />
-        </div>
-    </div>
-    <div class="form-group">
-        <lable asp-for="Category"></lable>
-        <div>
-            <input asp-for="Category" value=@ProductV.Category />
-        </div>
-    </div>
-    <div class="form-group">
-        <lable asp-for="Price"></lable>
-        <div>
-            <input asp-for="Price" value=@ProductV.Price />
-        </div>
-    </div>
+       
+        <input type="hidden" asp-for="Id" value=@ProductV.Id />
+            
+        <input type="text" class="form-control" asp-for="Name" placeholder="Name" value="@ProductV.Name"/>
 
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Update" />
+        <input type="text" class="form-control" asp-for="Description" placeholder="Description" value="@ProductV.Description" required="" />
+
+        <input type="text" class="form-control" asp-for="Category" placeholder="Category" value="@ProductV.Category" required="" />
+
+        <input type="text" class="form-control" asp-for="Price" placeholder="Price" value="@ProductV.Price" required="" />
+
+        <br />
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">UPDATE</button>
+    </form>
+        <div class="text-center">
+            <br />
+            <form method="post" asp-action="Delete" asp-controller="Product" asp-route-id="@ProductV.Id">
+                <input type="submit" class="btn btn-danger" value="DELETE" />
+                <!---<i class="bi bi-trash"></i>--->
+            </form>
+    <button type="button" class="btn btn-primary">
+        <a style="color:white;  text-decoration:none" href="/product/index">
+            <i class="bi bi-arrow-left-short"></i>
+
+            DASHBOARD
+        </a>
+    </button>
     </div>
-   
-</form>
 </div>
+
+</div>
+
+</body>
+</html>
