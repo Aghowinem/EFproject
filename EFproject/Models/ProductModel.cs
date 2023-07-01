@@ -12,6 +12,7 @@ namespace EFproject.Models
         //[StringLength(10)]
         public string Name { get; set; }
 
+        public string ProductImage { get; set; }
         public string Description { get; set; }
 
         public string Category { get; set; }

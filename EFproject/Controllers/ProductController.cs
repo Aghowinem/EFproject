@@ -20,8 +20,17 @@ namespace EFproject.Controllers
             ViewData["products"] = Products;
             return View();
         }
+        
         public IActionResult Products()
         {
+            var DisplayProducts = _db.Products.ToList();
+            ViewData["DisplayProducts"] = DisplayProducts;
+             return View();
+        }
+        public IActionResult ViewingProduct()
+        {
+            var DisplayProducts = _db.Products.ToList();
+            ViewData["ViewingProducts"] = DisplayProducts;
             return View();
         }
         //GET : /products/id 
@@ -50,7 +59,7 @@ namespace EFproject.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             //}
-            return View(product);
+           
         }
         // GET: /product/edit/id
         public IActionResult Edit(int? id)
