@@ -36,8 +36,13 @@
         <input type="text" class="form-control" asp-for="Category" placeholder="Category" value="@ProductV.Category" required="" />
 
         <input type="text" class="form-control" asp-for="Price" placeholder="Price" value="@ProductV.Price" required="" />
-
         <br />
+
+
+        <button style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; cursor:pointer; background-color:#FEC868;font-style:italic; color:aliceblue" class="w3-button" onclick="$('#inputField').click()">Upload Product Image</button>
+        <input asp-for="ProductImage" id="inputField" type="file" style="display: none" />
+        
+        <br /><br />
 
             <button class="w3-button w3-teal w3-large" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" type="submit" value="Submit">UPDATE</button>
     </form>

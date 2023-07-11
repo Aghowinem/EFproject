@@ -1,4 +1,5 @@
 ﻿@model ProductModel
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head> 
 
@@ -19,21 +21,30 @@
    
         
     <div class="wrapper">
-                <form class="form-signin" asp-action="Add" method="post" role="form">
+    <form class="form-signin" asp-action="Add" method="post" role="form" enctype="multipart/form-data">
                     
-                    <h2 class="form-signin-heading">Please fill the details</h2>
-                    
-                        <input type="text" class="form-control" asp-for="Name" placeholder="Name" />
-             
-                        <input type="text" class="form-control" asp-for="Description" placeholder="Description" required="" />
+            <h2 class="form-signin-heading">Please fill the details</h2>
 
-                        <input type="text" class="form-control" asp-for="Category" placeholder="Category" required="" />
+            <label for="fname" class="col-form-label">Product Name</label>
+            <input type="text" class="form-control" asp-for="Name" placeholder="Enter Product Name" required="" />
          
-                        <input type="text" class="form-control" asp-for="Price" placeholder="Price" required="" />
-                
-                        <br />
+            <label for="fname" class="col-form-label">Description</label>
+            <input type="text" class="form-control" asp-for="Description" placeholder="Enter Description" required="" />
+           
+            <label for="fname" class="col-form-label">Category</label>
+            <input type="text" class="form-control" asp-for="Category" placeholder="Enter Category" required="" />
 
-            <button class="w3-button w3-teal w3-large" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" type="submit" value="Submit">Submit</button>
+            <label for="fname" class="col-form-label">Price</label>
+            <input type="text" class="form-control" asp-for="Price" placeholder="Enter Price" required="" />
+
+            <br />
+            
+            <button style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; cursor:pointer; background-color:#FEC868;font-style:italic; color:aliceblue" class="w3-button" onclick="$('#inputField').click()">UPLOAD PRODUCT IMAGE</button>
+            <input asp-for="ProductImage" id="inputField" type="file" style="display: none" />
+         
+            <br /><br />
+            
+           <button class="w3-button w3-teal w3-large" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" type="submit" value="Submit">SUBMIT</button>
         </form>
     </div>
 

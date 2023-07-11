@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProductModel
+@{
     var Product = (List<ProductModel>)ViewData["products"];
 
 
@@ -31,6 +32,7 @@
                 <tr>
                     <th scope="col">ID NO.</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Product Image</th>
                     <th scope="col">Description</th>
                     <th scope="col">Price</th>
 
@@ -54,15 +56,16 @@
                     <tr>
                         <th scope="row" style="position:center; margin:100% ">@product.Id</th>
                         <th scope="row">@product.Name</th>
+                        <th scope="row"><img src="/ProductImages/@product.ProductImage" class="rounded mx-auto d-block" style="border-style:groove; "  width="65px" ></th>
                         <th scope="row">@product.Description</th>
                         <th scope="row">@product.Price</th>
-
+                       
                         <th>
                         <td style="display:-webkit-flex;">
-                            <button type="button" class="w3-button" style="margin:10px; background-color:steelblue; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><a style="color:white; text-decoration:none" href="/product/details/@product.Id">DETAILS</a></button>
-                            <button type="button" class="w3-button w3-teal" style="margin:10px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><a style="color:white;  text-decoration:none" href="/product/edit/@product.Id">EDIT</a></button>
+                            <button type="button" class="w3-button" style="margin:22px; background-color:steelblue; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><a style="color:white; text-decoration:none" href="/product/details/@product.Id">DETAILS</a></button>
+                            <button type="button" class="w3-button w3-teal" style="margin:22px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><a style="color:white;  text-decoration:none" href="/product/edit/@product.Id">EDIT</a></button>
                             <form method="post" asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id">
-                                <button type="submit" class="w3-button w3-red" style="margin:10px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">DELETE</button>
+                                <button type="submit" class="w3-button w3-red" style="margin:22px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">DELETE</button>
                                 <!---<i class="bi bi-trash"></i>--->
                             </form>
                         </td>
